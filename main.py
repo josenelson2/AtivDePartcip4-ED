@@ -19,7 +19,7 @@ while True:
         op = int(input("Opção inválida! Digite novamente: ")) 
      
     if op == 1:
-        name = input("Digite o nome que deseja adicionar: ")
+        name = input("Digite o nome que deseja adicionar: ").strip()
         fila.enqueue(name)
         print(f"Pronto. O elemento '{name}' foi adicionado!")
 
@@ -43,12 +43,15 @@ while True:
         print(f"A quantidade de pessoas na fila eh {quant}.")
 
     elif op == 5:
-        name = input("Qual nome deseja encontrar: ")
-        resul = fila.find(name)
-        if resul == None:
-            print("Nome não encontrado!")
+        if fila.size == 0:
+            print("Fila vazia!")
         else:
-            print("Nome encontrado!")
+            name = input("Qual nome deseja encontrar: ").strip()
+            resul = fila.find(name)
+            if resul == None:
+                print("Nome não encontrado!")
+            else:
+                print("Nome encontrado!")
             
     else:
         break
