@@ -17,4 +17,7 @@ class Queue:
         self.size += 1 #aumenta a contagem de pessoas na fila
         return "Nome foi enfileirado"
     
+    def dequeue(self):
+        pass
+    
         
